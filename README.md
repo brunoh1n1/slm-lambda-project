@@ -2,6 +2,9 @@
 
 Um chatbot especializado em Terapia Cognitivo-Comportamental (TCC) executando em AWS Lambda com Small Language Models (SLMs).
 
+
+![Diagrama do Projeto](diagram.png)
+
 ## 🎯 Características
 
 - **Especializado em TCC**: Respostas baseadas em técnicas de Terapia Cognitivo-Comportamental
