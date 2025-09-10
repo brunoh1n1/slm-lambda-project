@@ -1,0 +1,66 @@
+# Ollama Configuration for SLM Lambda
+# Baseado na proposta do AWS Builder
+
+# Configuração do Ollama
+ollama:
+  host: "http://localhost:11434"
+  timeout: 300
+  max_retries: 3
+
+# Modelos suportados
+models:
+  - name: "llama2:7b"
+    description: "Llama 2 7B - Modelo geral de texto"
+    size: "~4GB"
+    memory_required: "6GB"
+    use_cases: ["texto geral", "conversação", "análise"]
+    
+  - name: "mistral:7b"
+    description: "Mistral 7B - Modelo otimizado para código e texto"
+    size: "~4GB"
+    memory_required: "6GB"
+    use_cases: ["código", "texto", "análise técnica"]
+    
+  - name: "codellama:7b"
+    description: "CodeLlama 7B - Especializado em geração de código"
+    size: "~4GB"
+    memory_required: "6GB"
+    use_cases: ["geração de código", "debugging", "documentação"]
+    
+  - name: "phi:2"
+    description: "Phi-2 - Modelo pequeno e eficiente"
+    size: "~2GB"
+    memory_required: "4GB"
+    use_cases: ["texto simples", "respostas rápidas", "prototipagem"]
+
+# Configurações de performance
+performance:
+  default_max_tokens: 512
+  max_max_tokens: 2048
+  default_temperature: 0.7
+  min_temperature: 0.0
+  max_temperature: 2.0
+  
+# Configurações de cache
+cache:
+  enabled: true
+  ttl: 3600  # 1 hora
+  max_size: "10GB"
+  
+# Configurações de monitoramento
+monitoring:
+  enabled: true
+  log_level: "INFO"
+  metrics_interval: 60  # segundos
+  
+# Configurações de segurança
+security:
+  enable_cors: true
+  rate_limit: 100  # requests por minuto
+  max_request_size: "10MB"
+  
+# Configurações de rede
+network:
+  timeout: 300  # segundos
+  retry_attempts: 3
+  retry_delay: 1  # segundo
